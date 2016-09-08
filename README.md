@@ -4,7 +4,7 @@ A React Native Module that converts an image's asset-library:// uri to base64:
 ## Install
 
 ### IOS
-1. `npm install --save react-native-ios-asset-library-to-base64`
+1. `npm install --save asset-library-to-base64`
 2. Open your project in Xcode and copy `ios/RCTCustom.m` provided in this module  to  `Libraries > React > Base` in xcode
 
 ## Usage
