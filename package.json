@@ -1,0 +1,28 @@
+{
+  "name": "asset-library-to-base64",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinesh829269/react-native-ios-asset-library-to-base64.git"
+  },
+  "version": "1.0.1",
+  "description": "A React Native Module to convert image's  asset-library:// uri to base64.",
+  "author": "Dinesh Kumar Sharma",
+  "contributors": [],
+  "nativePackage": true,
+  "keywords": [
+    "react-native",
+    "asset-library-to-base64",
+    "asset",
+    "library",
+    "base64",
+    "asset library to base 64"
+  ],
+  "bugs": {
+    "url": "https://github.com/dinesh829269/react-native-ios-asset-library-to-base64.git"
+  },
+  "homepage": "https://github.com/dinesh829269/react-native-ios-asset-library-to-base64.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
