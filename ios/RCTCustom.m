@@ -26,6 +26,17 @@ RCT_EXPORT_METHOD(readImage:(NSString *)input callback:(RCTResponseSenderBlock)c
     ALAssetRepresentation *representation = [asset defaultRepresentation];
     CGImageRef imageRef = [representation fullResolutionImage];
 
+    // First, write orientation to UIImage, i.e., EXIF message.
+    UIImage *image = [UIImage imageWithCGImage:[representation fullResolutionImage] scale:representation.scale orientation:(UIImageOrientation)representation.orientation];
+    // Second, fix orientation, and drop out EXIF
+    if (image.imageOrientation != UIImageOrientationUp) {
+      UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+      [image drawInRect:(CGRect){0, 0, image.size}];
+      UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+      UIGraphicsEndImageContext();
+      image = normalizedImage;
+    }
+
     // Create UIImageJPEGRepresentation from CGImageRef
     NSData *imageData = UIImageJPEGRepresentation([UIImage imageWithCGImage:imageRef], 1.0);
 
